@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Item;
 import model.User;
@@ -110,7 +113,7 @@ public class Controller implements Initializable {
 	    	PreparedStatement ps = DbConnection.conn.prepareStatement(SPsql);
 	    	ps.setEscapeProcessing(true);
 	    	ps.setInt(1, user.getUserId().get());
-	    	ps.setInt(2, keszlet.getSelectionModel().getSelectedItem().getItemId().get());
+	    	ps.setInt(2, keszlet.getSelectionModel().getSelectedItem().getItemId());
 	    	ps.setInt(3, 1);
 	    	ps.setInt(4, ret);
 	    	ps.execute();
@@ -134,13 +137,17 @@ public class Controller implements Initializable {
 	    	PreparedStatement ps = DbConnection.conn.prepareStatement(SPsql);
 	    	ps.setEscapeProcessing(true);
 	    	ps.setInt(1, user.getUserId().get());
-	    	ps.setInt(2, kosar.getSelectionModel().getSelectedItem().getItemId().get());
+	    	ps.setInt(2, kosar.getSelectionModel().getSelectedItem().getItemId());
 	    	ps.setInt(3, -1);
 	    	ps.setInt(4, ret);
 	    	ps.execute();
 	    	Stockdb();
 			Basketdb(user.getUserId().get());
-		} catch (SQLException e) {
+		} 
+	    catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -219,9 +226,7 @@ public class Controller implements Initializable {
 	    	stmt = DbConnection.conn.createStatement();
 			ResultSet rs = stmt.executeQuery(SQL);
 	    	ObservableList<Item> list = FXCollections.observableArrayList();
-	    	List<Item> Itemek = new ArrayList<Item>();
-	    	while(rs.next()) Itemek.add(new Item(rs.getInt(1) , rs.getString(2), rs.getString(3), rs.getInt(4) , rs.getInt(5)));
-	    	list.addAll(Itemek);
+	    	while(rs.next()) list.add(new Item(rs.getInt(1) , rs.getString(2), rs.getString(3), rs.getInt(4) , rs.getInt(5)));
 	        keszlet.setItems(list);
 	        keszlet.refresh();
 		} catch (SQLException e) {
@@ -239,12 +244,12 @@ public class Controller implements Initializable {
 	    	stmt = DbConnection.conn.createStatement();
 			ResultSet rs = stmt.executeQuery(SQL);
 	    	ObservableList<Item> list = FXCollections.observableArrayList();
-	    	List<Item> Itemek = new ArrayList<Item>();
+	    	//List<Item> Itemek = new ArrayList<Item>();
 	    	while(rs.next()){
-	    		Itemek.add(new Item(rs.getInt(1) , rs.getString(2), rs.getString(3), rs.getInt(4) , rs.getInt(5)));
+	    		list.add(new Item(rs.getInt(1) , rs.getString(2), rs.getString(3), rs.getInt(4) , rs.getInt(5)));
 	    		setTextOsszeg(rs.getString(6));
 	    	}
-	    	list.addAll(Itemek);
+	    	//list.addAll(Itemek);
 	    	kosar.setItems(list);
 	    	kosar.refresh();
 		} catch (SQLException e) {
@@ -254,6 +259,20 @@ public class Controller implements Initializable {
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		
+		keszletitemId.setCellValueFactory(new PropertyValueFactory<>("itemId"));
+		keszletitemName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
+		keszletdesc.setCellValueFactory(new PropertyValueFactory<>("desc"));
+		keszletprice.setCellValueFactory(new PropertyValueFactory<>("price"));
+		keszletquantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+ 
+		kosaritemId.setCellValueFactory(new PropertyValueFactory<>("itemId"));
+		kosaritemName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
+		kosardesc.setCellValueFactory(new PropertyValueFactory<>("desc"));
+		kosarprice.setCellValueFactory(new PropertyValueFactory<>("price"));
+		kosarquantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+		
+		
 		
 		Userdb();
 		Stockdb();

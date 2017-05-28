@@ -1,9 +1,6 @@
 package model;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+
 
 /**
  * @author Visnyei György
@@ -25,27 +22,27 @@ public class Item {
 	/**
 	 * Az item id-t tárolja.
 	 */
-	public IntegerProperty itemId;
+	public int itemId;
 	
 	/**
 	 * Az item nevét tárolja.
 	 */
-	public StringProperty itemName;
+	public String itemName;
 	
 	/**
 	 * Az item leirását tárolja.
 	 */
-	public StringProperty desc;
+	public String desc;
 	
 	/**
 	 * Az item árát tárolja.
 	 */
-	public IntegerProperty price;
+	public int price;
 	
 	/**
 	 * A item mennyiségét tárolja.
 	 */
-	public IntegerProperty quantity;
+	public int quantity;
 	
 	
 	/**
@@ -56,25 +53,25 @@ public class Item {
 	 * @param price az item ára
 	 * @param quantity az item mennyisége
 	 * 
-	 * @see javafx.beans.property.SimpleIntegerProperty
-	 * @see javafx.beans.property.SimpleStringProperty
+	 * @see javafx.beans.property.Simpleint
+	 * @see javafx.beans.property.SimpleString
 	 */
 	public Item(int itemId, String itemName, String desc, int price, int quantity) {
 		super();
-		this.itemId = new SimpleIntegerProperty(itemId);
-		this.itemName = new SimpleStringProperty(itemName);
-		this.desc = new SimpleStringProperty(desc);
-		this.price = new SimpleIntegerProperty(price);
-		this.quantity = new SimpleIntegerProperty(quantity);
+		this.itemId = itemId;
+		this.itemName = itemName;
+		this.desc = desc;
+		this.price = price;
+		this.quantity = quantity;
 	}
 	
 
 	/**
 	 * A függvény visszaadja az item azonosítóját.
 	 * @return az item azonosítója
-	 * @see IntegerProperty
+	 * @see int
 	 */
-	public IntegerProperty getItemId() {
+	public int getItemId() {
 		return itemId;
 	}
 	
@@ -82,16 +79,16 @@ public class Item {
 	 * Beállítija az item azonosítóját.
 	 * @param itemId a item azonosítója.
 	 */
-	public void setItemId(IntegerProperty itemId) {
+	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
 
 	/**
 	 * A függvény visszaadja az item nevét.
 	 * @return az item neve
-	 * @see StringProperty
+	 * @see String
 	 */
-	public StringProperty getItemName() {
+	public String getItemName() {
 		return itemName;
 	}
 
@@ -99,16 +96,16 @@ public class Item {
 	 * Beállítija az item nevét.
 	 * @param itemName az item neve
 	 */
-	public void setItemName(StringProperty itemName) {
+	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
 
 	/**
 	 * A függvény visszaadja az item leirasát.
 	 * @return az item leirasa
-	 * @see StringProperty
+	 * @see String
 	 */
-	public StringProperty getDesc() {
+	public String getDesc() {
 		return desc;
 	}
 
@@ -116,16 +113,16 @@ public class Item {
 	 * Beállítija az item leirasát.
 	 * @param desc az item leirasa.
 	 */
-	public void setDesc(StringProperty desc) {
+	public void setDesc(String desc) {
 		this.desc = desc;
 	}
 
 	/**
 	 * A függvény visszaadja az item árát.
 	 * @return az item ára.
-	 * @see IntegerProperty
+	 * @see int
 	 */
-	public IntegerProperty getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
@@ -133,16 +130,16 @@ public class Item {
 	 * Beállítija az item árát.
 	 * @param price az item ára.
 	 */
-	public void setPrice(IntegerProperty price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 
 	/**
 	 * A függvény visszaadja az item mennyiségét
 	 * @return az item mennyisége
-	 * @see IntegerProperty
+	 * @see int
 	 */
-	public IntegerProperty getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
 
@@ -150,7 +147,7 @@ public class Item {
 	 * Beállítija az item mennyiségét.
 	 * @param quantity az item mennyisége.
 	 */
-	public void setQuantity(IntegerProperty quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 

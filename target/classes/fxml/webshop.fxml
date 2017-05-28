@@ -23,20 +23,20 @@
     <Label layoutX="30.0" layoutY="390.0" text="Kosár:" />
     <TableView fx:id="keszlet" layoutX="29.0" layoutY="105.0" prefHeight="231.0" prefWidth="610.0">
       <columns>
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="118.0" text="keszletitemId" visible="false" fx:id="itemId" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="186.0" text="keszletitemName" fx:id="Termekneve" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="241.0" text="keszletdesc" fx:id="Leiras" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="102.0" text="keszletprice" fx:id="Ár" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="74.0" text="keszletquantity" fx:id="Készleten" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="118.0" fx:id="keszletitemId" visible="false" text="itemId" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="186.0" fx:id="keszletitemName" text="Termekneve" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="241.0" fx:id="keszletdesc" text="Leiras" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="102.0" fx:id="keszletprice" text="Ár" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="74.0" fx:id="keszletquantity" text="Készleten" />
       </columns>
     </TableView>
     <TableView fx:id="kosar" layoutX="29.0" layoutY="418.0" prefHeight="231.0" prefWidth="610.0" >
       <columns>
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="118.0" text="kosaritemId" visible="false" fx:id="itemId" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="186.0" text="kosaritemName" fx:id="Termekneve" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="241.0" text="kosardesc" fx:id="Leiras" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="102.0" text="kosarprice" fx:id="Ár" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="74.0" text="kosarquantity" fx:id="Kosarban" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="118.0" fx:id="kosaritemId" visible="false" text="itemId" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="186.0" fx:id="kosaritemName" text="Termekneve" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="241.0" fx:id="kosardesc" text="Leiras" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="102.0" fx:id="kosarprice" text="Ár" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="74.0" fx:id="kosarquantity" text="Kosarban" />
       </columns>
     </TableView>
   </children>
