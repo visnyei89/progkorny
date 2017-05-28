@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="753.951171875" minWidth="679.0" prefHeight="753.951171875" prefWidth="679.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.Controller">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Button layoutX="29.0" layoutY="351.0" mnemonicParsing="false" onAction="#kosarbarak" text="Kosárba" />
+    <Button layoutX="30.0" layoutY="660.0" mnemonicParsing="false" onAction="#kosartorol" text="Töröl" />
+    <Button layoutX="552.0" layoutY="660.0" mnemonicParsing="false" onAction="#fizet" text="Fizet" />
+    <Button layoutX="261.0" layoutY="700.0" mnemonicParsing="false" onAction="#egyenlegfeltolt" text="Egyenleg feltölt" />
+    <TextField fx:id="textUser" editable="false" layoutX="145.0" layoutY="35.0" prefWidth="200.0" />
+    <TextField fx:id="textCredit" editable="false" layoutX="440.0" layoutY="35.0" prefWidth="200.0" />
+    <TextField fx:id="textOsszeg" editable="false" layoutX="340.0" layoutY="660.0" prefWidth="200.0" />
+    <TextField fx:id="textFeltolt" layoutX="38.0" layoutY="700.0" prefWidth="200.0" />
+    <Label layoutX="29.0" layoutY="35.0" text="Felhasználó:" />
+    <Label layoutX="364.0" layoutY="35.0" text="Egyenleg:" />
+    <Label layoutX="30.0" layoutY="76.0" text="Készlet:" />
+    <Label layoutX="30.0" layoutY="390.0" text="Kosár:" />
+    <TableView fx:id="keszlet" layoutX="29.0" layoutY="105.0" prefHeight="231.0" prefWidth="610.0">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="118.0" text="keszletitemId" visible="false" fx:id="itemId" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="186.0" text="keszletitemName" fx:id="Termekneve" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="241.0" text="keszletdesc" fx:id="Leiras" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="102.0" text="keszletprice" fx:id="Ár" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="74.0" text="keszletquantity" fx:id="Készleten" />
+      </columns>
+    </TableView>
+    <TableView fx:id="kosar" layoutX="29.0" layoutY="418.0" prefHeight="231.0" prefWidth="610.0" >
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="118.0" text="kosaritemId" visible="false" fx:id="itemId" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="186.0" text="kosaritemName" fx:id="Termekneve" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="241.0" text="kosardesc" fx:id="Leiras" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="102.0" text="kosarprice" fx:id="Ár" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="74.0" text="kosarquantity" fx:id="Kosarban" />
+      </columns>
+    </TableView>
+  </children>
+  <padding>
+    <Insets bottom="100.0" left="100.0" right="1.0" top="1.0" />
+  </padding>
+</AnchorPane>
